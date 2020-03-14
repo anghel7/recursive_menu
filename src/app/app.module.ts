@@ -17,6 +17,7 @@ import { MenuComponent } from './menu/menu.component';
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[NgbModule]
 })
 export class AppModule { }
