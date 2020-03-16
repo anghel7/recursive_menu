@@ -1,14 +1,12 @@
-<nav class="sidebar-nav" style="width: 300px;">
-  <ng-container *ngIf="!menu.subMenu ;else second">
-    <button type="button" class="btn btn-primary mb-2" style="width: 100%;">{{ menu.title }}</button>
-  </ng-container>
-  <ng-template #second>
-    <button type="button" class="btn btn-outline-primary mb-1" style="width: 100%;"
-      (click)="menu.isCollapsed = !menu.isCollapsed" [attr.aria-expanded]="!menu.isCollapsed"
-      aria-controls="collapseExample">{{ menu.title }}</button>
+<ng-container *ngIf="!menu.subMenu ;else second">
+  <button type="button" class="btn btn-primary mb-2" style="width: 100%;">{{ menu.title }}</button>
+</ng-container>
+<ng-template #second>
+  <button type="button" class="btn btn-outline-primary mb-1" style="width: 100%;"
+    (click)="menu.isCollapsed = !menu.isCollapsed" [attr.aria-expanded]="!menu.isCollapsed"
+    aria-controls="collapseExample">{{ menu.title }}</button>
 
-    <div class=" p-0 pl-4 mb-1" id="collapseExample" [ngbCollapse]="menu.isCollapsed">
-      <app-menu *ngFor="let sbMenu of menu.subMenu" [menu]="sbMenu"></app-menu>
-    </div>
-  </ng-template>
-</nav>
+  <div class=" p-0 pl-4 mb-1" id="collapseExample" [ngbCollapse]="menu.isCollapsed">
+    <app-menu *ngFor="let sbMenu of menu.subMenu" [menu]="sbMenu"></app-menu>
+  </div>
+</ng-template>
